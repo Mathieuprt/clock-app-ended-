@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr_FR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Clock App</title>
+</head>
+<body class="">
+
+    <div class="container">
+        <section class="quote-section" id="quote-section">
+            <div class="quote-section__text">
+                <p id="quote-text">The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time.</p>
+                <p class="heading heading--h5 quote-title" id="quote-title">Tom Cargill</p>
+            </div>
+            <button id="refresh" class="button button-refresh">
+                <img src="images/refresh.svg" alt="Icone actualisation">
+            </button>
+        </section>
+
+        <section class="clock-section" id="clock-section">
+            <h1 class="heading heading--h4" id="clock-section__heading">Good Morning</h1>
+            <div class="clock-section__hour">
+                <h2 class="heading heading--h1" id="hour">11:37</h2>
+                <span class="bst">BST</span>
+            </div>
+            <div class="clock-section__location-infos">
+                <h3 class="heading heading--h3" id="location">In London, UK</h3>
+
+                <button class="button button-more" id="button-more">More</button>
+            </div>
+
+        </section>
+
+    </div>
+
+    <section class="infos-section" id="infos-section">
+
+        <div class="container">
+            <div class="infos-section__item">
+                <h4 class="heading heading--h6">Current Timezone</h4>
+                <p class="heading heading--h2" id="timezone">Europe/London</p>
+            </div>
+
+            <div class="infos-section__item">
+                <h4 class="heading heading--h6">Day of the Year</h4>
+                <p class="heading heading--h2" id="dayYear">295</p>
+            </div>
+
+            <div class="infos-section__item">
+                <h4 class="heading heading--h6">Day of the Week</h4>
+                <p class="heading heading--h2" id="dayWeek">5</p>
+            </div>
+
+            <div class="infos-section__item">
+                <h4 class="heading heading--h6">Week Number</h4>
+                <p class="heading heading--h2" id="weekNumber">42</p>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="js/api.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

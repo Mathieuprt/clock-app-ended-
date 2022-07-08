@@ -1,0 +1,83 @@
+.clock-section{
+    position: absolute;
+    bottom: 4rem;
+
+    width: 90%;
+    max-width: 1110px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 1s ease-in-out;
+
+
+    h1{
+        position: relative;
+        padding-left: 3.5rem;
+
+        @include mediaquery ($xsmall){
+            padding-left: 4.5rem;
+        }
+
+        &::before{
+            content: url('/images/sun.svg');
+
+            display: inline-block;
+
+            position: absolute;
+            left: 0;
+        }
+
+        &.night-theme::before{
+            content: url('/images/moon.svg');
+        }
+    }
+
+    &__hour{
+        display: flex;
+        align-items: flex-end;
+
+        margin: 2.2rem 0;
+
+        @include mediaquery($xsmall){
+            margin: 0;
+        }
+
+        .bst{
+            color: var(--white);
+            font-size: 1.5rem;
+
+            font-weight: 300;
+            line-height: 28px;
+
+            @include mediaquery($xsmall){
+                font-size: 3.2rem;
+                line-height: 65px;
+
+                margin-left: 1.5rem;
+            }
+
+            @include mediaquery($medium){
+                font-size: 4rem;
+            }
+        }
+    }
+
+    &__location-infos{
+        @include mediaquery($medium){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &.moved{
+        bottom: 37rem;
+
+        .clock-section__hour{
+            @include mediaquery($small){
+                margin: 0;
+            }
+        }
+
+    }
+}
+

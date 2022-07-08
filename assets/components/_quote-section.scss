@@ -1,0 +1,28 @@
+.quote-section{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    max-width: 57.5rem;
+
+    .quote-section__text{
+        padding-right: 2rem;
+
+        @include mediaquery($small){
+            padding-right: 1rem;
+        }
+
+        @include mediaquery($large){
+            padding-right: 0.5rem;
+        }
+    }
+
+    .quote-title{
+        font-weight: 700;
+        margin-top: .8rem;
+    }
+
+    &.hidden{
+        display: none;
+    }
+}

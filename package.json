@@ -1,0 +1,19 @@
+{
+  "name": "ecf-front-clock-app",
+  "version": "1.0.0",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass assets/style.scss css/styles.css --watch --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.cefim-formation.org/MPerrot/ecf-front-clock-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.52.3"
+  }
+}

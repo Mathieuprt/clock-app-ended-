@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html{
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+}
+
+.heading{
+
+    &.heading--h1{
+
+        font-weight: bold;
+        color: var(--white);
+        font-size: 10rem;
+        line-height: 100px;
+        letter-spacing: -2.5px;
+
+        @include mediaquery($xsmall){
+            font-size: 17.5rem;
+            line-height: 175px;
+            letter-spacing: -4.38px;
+        }
+
+        @include mediaquery($medium){
+            font-size: 20rem;
+            line-height: 200px;
+            letter-spacing: -5px;
+        }
+    }
+
+    &.heading--h2{
+        font-weight: bold;
+        font-size: 2rem;
+
+        @include mediaquery($xsmall){
+            font-size: 4rem;
+        }
+
+        @include mediaquery($medium){
+            font-size: 5.6rem;
+        }
+
+    }
+
+    &.heading--h3{
+
+        font-weight: bold;
+        text-transform: uppercase;
+        color: var(--white);
+        font-size: 1.5rem;
+        line-height: 28px;
+        letter-spacing: .3rem;
+
+        @include mediaquery ($xsmall){
+            letter-spacing: 3.6px;
+            font-size: 1.8rem;
+
+        }
+
+        @include mediaquery($medium){
+            letter-spacing: 4.8px;
+            font-size: 2.4rem;
+        }
+
+    }
+
+    &.heading--h4{
+
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: var(--white);
+        letter-spacing: .3rem;
+        line-height: 25px;
+        text-transform: uppercase;
+
+        @include mediaquery($xsmall){
+            letter-spacing: 3.6px;
+            line-height: 28px;
+            font-size: 1.8rem;
+        }
+
+        @include mediaquery($medium){
+            font-size: 2rem;
+            letter-spacing: 4px;
+        }
+
+    }
+
+    .heading--h5{
+        font-weight: bold;
+        font-size: clamp( 10px, calc(0.61vw + 7.73px) , 15px);
+        line-height: 25px;
+        letter-spacing: .2rem;
+
+        @include mediaquery($xsmall){
+            letter-spacing: 2.6rem;
+            line-height: 28px;
+        }
+
+        @include mediaquery($medium){
+            letter-spacing: 3px;
+        }
+    }
+
+    &.heading--h6{
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 28px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        color: var(--gray);
+
+        @include mediaquery($xsmall){
+            font-size: 1.3rem;
+            letter-spacing: 2.6px;
+        }
+
+        @include mediaquery($medium){
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+        }
+
+    }
+}
+
+p{
+    font-size: clamp( 12px, calc(0.73vw + 9.27px) , 18px);
+    color: var(--white);
+    line-height: 2.2rem;
+
+    font-weight: 400;
+
+    @include mediaquery($xsmall){
+        line-height: 2.8rem;
+    }
+
+}
