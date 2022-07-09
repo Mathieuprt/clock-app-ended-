@@ -17,7 +17,7 @@
             padding-left: 4.5rem;
         }
 
-        &::before{
+        &.day-theme::before{
             content: url('/images/sun.svg');
 
             display: inline-block;
@@ -28,6 +28,10 @@
 
         &.night-theme::before{
             content: url('/images/moon.svg');
+            display: inline-block;
+
+            position: absolute;
+            left: 0;
         }
     }
 

@@ -35,59 +35,24 @@ quoteBtn.addEventListener('click', () => {
     xhr.send();
 })
 
-// Appel de l'API pour la gestion de l'heure et affichage étendu en utilisant Async
 
-const clockHour = document.getElementById('hour')
+// Appel de l'API pour la gestion de l'heure et affichage étendu en utilisant une fonction Async
+
+const hour = document.getElementById('hour')
 const timezone = document.getElementById('timezone')
 const dayYear = document.getElementById('dayYear')
 const dayWeek = document.getElementById('dayWeek')
 const weekNumber = document.getElementById('weekNumber')
+const bst = document.getElementById('bst')
 
+// Variable concernant le message de bienvenue
 
-
-// const urlClock = 'http://worldtimeapi.org/api/ip';
-
-// const request = new XMLHttpRequest();
-
-// request.open("GET", urlClock)
-
-// request.setRequestHeader('Accept', 'application/json')
-
-// request.onload = function(){
-//     if(request.status === 200){
-
-//         let responseData = request.response;
-
-//         let data = JSON.parse(responseData)
-
-//         let timezoneData = data.timezone;
-//         let dayYearData = data.day_of_year;
-//         let dayWeekkData = data.day_of_week;
-//         let weekNumberData = data.week_number;
-
-//         // Création de l'objet Date
-//         let datetime = data.datetime;
-
-//         console.log(datetime)
-//         let dateObjet = JSON.parse(datetime)
-
-//         console.log(dateObjet)
-
-//         timezone.innerText = timezoneData;
-//         dayYear.innerText = dayYearData;
-//         dayWeek.innerText = dayWeekkData;
-//         weekNumber.innerText = weekNumberData;
-//     }
-
-
-// }
-// request.send()
-
+const title = document.getElementById('clock-section__heading')
 
 
 async function getTime(){
 
-    let response = await fetch('https://worldtimeapi.org/api/ip',{
+    let response = await fetch('http://worldtimeapi.org/api/ip',{
         headers: {'Accept': "application/json"}
     })
 
@@ -99,19 +64,66 @@ async function getTime(){
     let dayYearData = data.day_of_year;
     let dayWeekkData = data.day_of_week;
     let weekNumberData = data.week_number;
-    let datetime = data.datetime;
+    let datetime = data.datetime.substring(11,16);
+    let bstData = data.abbreviation;
 
-    let dateTimeObj = new Date()
+    hour.textContent = datetime
+    timezone.textContent = timezoneData;
+    dayYear.textContent = dayYearData;
+    dayWeek.textContent = dayWeekkData;
+    weekNumber.textContent = weekNumberData;
+    bst.textContent = bstData
 
-    // clockHour.innerText = datetime
-    timezone.innerText = timezoneData;
-    dayYear.innerText = dayYearData;
-    dayWeek.innerText = dayWeekkData;
-    weekNumber.innerText = weekNumberData;
+    // Changement de message de bienvenue et de l'image de fond en fonction de l'heure
+
+    const datetimeTitle = parseInt(datetime)
+    const infosSection = document.getElementById('infos-section')
+
+    switch(true){
+
+        case datetimeTitle >= 5 && datetimeTitle <= 12:
+            title.textContent = 'Good Morning'
+            title.classList.add('day-theme')
+            break;
+
+        case datetimeTitle >= 12 && datetimeTitle <= 18:
+            title.textContent = 'Good Afternoon'
+            title.classList.add('day-theme')
+            break;
+
+        default:
+            title.textContent = 'Good Evening'
+            title.classList.add('night-theme')
+            infosSection.classList.add('night-theme')
+            document.body.classList.add('night-theme')
+            break;
+
+    }
+
+
+    // Appel de l'API pour l'affichage de la ville
+
+
+    const locationTitle = document.getElementById('location')
+
+    const responselocation = await fetch('https://api.ipbase.com/v2/info?apikey=3XRHLCOd7lmx9ul15Aqtmw1G868fOLKDiBUxIKTC');
+
+    const dataLocation = await responselocation.json()
+
+    const cityName = dataLocation.data.location.city.name;
+    const countryName = dataLocation.data.location.country.name
+
+    locationTitle.textContent = ' In ' + cityName + ' , ' + countryName;
+
 
 }
 
-getTime();
+document.addEventListener("DOMContentLoaded", getTime, false)
+
+
+
+
+
 
 
 
