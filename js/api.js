@@ -52,7 +52,7 @@ const title = document.getElementById('clock-section__heading')
 
 async function getTime(){
 
-    let response = await fetch('http://worldtimeapi.org/api/ip',{
+    let response = await fetch('https://worldtimeapi.org/api/ip',{
         headers: {'Accept': "application/json"}
     })
 
