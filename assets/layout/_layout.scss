@@ -3,7 +3,7 @@ body{
   height: 100%;
   overflow: hidden;
 
-  background-image: url('/images/day.jpg');
+  background-image: url('images/day.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,7 +27,7 @@ body{
   }
 
   &.night-theme{
-    background-image: url('/images/night.jpg');
+    background-image: url('images/night.jpg');
   }
 
 }
