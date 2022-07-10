@@ -106,7 +106,7 @@ async function getTime(){
 
     const locationTitle = document.getElementById('location')
 
-    const responselocation = await fetch('https://api.ipbase.com/v2/info?apikey=3XRHLCOd7lmx9ul15Aqtmw1G868fOLKDiBUxIKTC');
+    const responselocation = await fetch('https://api.ipbase.com/v2/info?apikey=LkatZokIZ6Yzm3NyoH6cqpt84ZDLl5YESiCJlrjF');
 
     const dataLocation = await responselocation.json()
 
