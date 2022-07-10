@@ -118,7 +118,7 @@ async function getTime(){
 
 }
 
-document.addEventListener("DOMContentLoaded", getTime, false)
+setInterval(getTime, 1000)
 
 
 
